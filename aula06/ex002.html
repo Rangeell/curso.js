@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu primeiro programa</title>
 </head>
+
 <!-- head é parte do documento resposável pelas configurações -->
+
 <style>
 body {
     background-color: rgb(46, 139, 245);
@@ -22,6 +24,8 @@ p {
     color: white;
 }
 
+/* Comentário em CSS */
+
 </style>
 
 <body>
@@ -31,9 +35,8 @@ p {
     </p>
 
     <script>
-        window.alert("Minha primeira mensagem") // Janela de alerta.
-        window.confirm('Está gostando de JS?') // Janela com botão "ok" e "cancelar".
-        window.prompt('Qual é o seu nome?') // Vai perguntar o nome.
+        var nome = window.prompt('Qual é o seu nome?') // Vai perguntar o nome.
+        window.alert('É um grande prazer te conhecer, '  + nome + '!') // O + tem função de concatenação
     </script>
 
 </body>
