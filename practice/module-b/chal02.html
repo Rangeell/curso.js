@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 02</title>
+
+    <style>
+        h1 {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Jantar (Numbers + Coerção + Formatação)</h1>
+    <script>
+        var valorConsumo = Number(prompt('Qual foi o valor de consumo? '))
+        var gorjetaP = Number(prompt('Quanto gostaria de oferecer de gorjeta em porcentagem? '))
+        var gorjetaV = (valorConsumo * gorjetaP)/100
+        var total = valorConsumo + gorjetaV
+        var em3 = total/3
+        console.log(`O valor total da sua conta saiu em ${total.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`)
+        console.log(` A sua conta divida em 3 fica: ${em3.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`)
+    </script>
+</body>
+</html>

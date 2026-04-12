@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge 03</title>
+
+    <style>
+        h1 {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>O Corretor de Preços (Replace + Lógica)</h1>
+    <script>
+        let oferta = 'Produto custa 50,00 reais'
+        var novoProduto = prompt('Qual o novo nome do produto? ')
+        var desconto = Number(prompt('Qual o valor de desconto?'))
+        var novoPreço = 50 - desconto
+        console.log(`O novo produto, ${novoProduto}, custa: ${novoPreço.toLocaleString('pt-BR', {style:"currency", currency: 'BRL'})}`)
+    </script>
+</body>
+</html>
