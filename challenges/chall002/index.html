@@ -25,15 +25,15 @@
             height: 100dvh;
         }
 
-        .botao {
+        #botao {
             background-image: linear-gradient(to bottom, rgb(166, 164, 164) 20%, lightgrey);
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.429);
         }
 
-        .botao:hover,
-        .botao:focus-visible {
+        #botao:hover,
+        #botao:focus-visible {
             background-image: linear-gradient(to bottom, lightgrey, rgb(166, 164, 164) 20%);
             cursor: pointer;
         }
@@ -42,12 +42,20 @@
 </head>
 
 <body>
-    <div class="botao" id="botao1">
+    <div id="botao">
         <p>Inicie o desafio</p>
     </div>
 
     <script>
-        
+        var bt1 = document.querySelector('#botao')
+
+        bt1.addEventListener('click', clicou)
+
+        function clicou() {
+            var nome = prompt('Qual é o seu nome?')
+            var idade = prompt('Qual a sua idade?')
+            alert(`Acabei de te conhecer ${nome}, que tem ${idade} anos de idade!`)
+        }
     </script>
 
 </body>
