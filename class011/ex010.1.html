@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(to bottom, rgb(31, 165, 31), rgb(64, 166, 134));
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            width: 100%;
+            gap: 20px;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.492);
+            backdrop-filter: blur(20px) saturate(160%);
+            -webkit-backdrop-filter: blur(12px) saturate(160%);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            border-radius:12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-left: 5px solid green;
+            transition: border-left-width .3s ease-in-out;
+        }
+
+        main:hover {
+            border-left-width: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        input[type='text'] {
+            border: 1px solid black;
+            border-radius: 8px;
+            color: rgb(11, 105, 49);
+            padding: 5px;
+            background-color: rgb(121, 235, 125);
+            transition: background-color .3s ease;
+        }
+
+        input[type='text']:hover,
+        input[type='text']:focus {
+            background-color: white;
+            outline: none;
+        }
+
+        input[type='text']:focus-visible {
+            outline: 2px solid rgb(8, 119, 36);
+            outline-offset: 1px;
+        }
+
+        input::placeholder {
+            color: rgb(11, 105, 49);
+        }
+
+        input[type='button'] {
+            padding: 10px;
+            font-weight: bold;
+            color: rgb(21, 113, 82);
+            background-color: rgba(55, 163, 89, 0.583);
+            border: 1px solid black;
+            border-radius: 8px;
+            transition: all .3s ease, transform .1s ease-in-out;
+        }
+
+        input[type='button']:hover,
+        input[type='button']:focus-visible {
+            background-color: rgba(35, 131, 65, 0.583);
+            cursor: pointer;
+            color: aquamarine;
+            box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.421);
+        }
+
+        input[type='button']:active {
+            transform: scale(.90);
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+
+    <main>
+        <form action="cadastro.php" method="get" autocomplete="on">
+            <p>
+                <label for="icountry">Você é de qual país?</label>
+                <input type="text" name="country" id="icountry" placeholder="Ex: Brasil" required>
+            </p>
+            <p>
+                <input type="button" value="Verificar">
+            </p>
+            <div id="res">
+            </div>
+    </main>
+    </form>
+
+    <script>
+        var tcountry = document.querySelector('#icountry')
+        var button = document.querySelector('input[type="button"]')
+        var res = document.querySelector('#res')
+
+        button.addEventListener('click', verificar)
+
+        function verificar() {
+            var country = tcountry.value
+
+            if (country == 'Brasil') {
+                res.innerHTML = `Como você reside em ${country}, você é Brasileiro!`
+            } else {
+                res.innerHTML = `Como você reside em ${country}, você é estrangeiro!`
+            }
+
+            res.innerHTML += '<br> Obrigado por usar o nosso programa!'
+        }
+    </script>
+
+</body>
+
+</html>
