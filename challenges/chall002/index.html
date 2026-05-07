@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio 01</title>
+    <title>Desafio de Boas Vindas</title>
 
     <style>
         * {
@@ -15,20 +15,21 @@
         }
 
         body {
-            font: normal 1rem Arial, Helvetica, sans-serif;
-            width: 100%;
-            height: 100dvh;
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             align-items: center;
             gap: 20px;
+            font: normal 1rem Arial, Helvetica, sans-serif;
+            width: 100%;
+            height: 100dvh;
         }
 
         .botao {
             background-image: linear-gradient(to bottom, rgb(166, 164, 164) 20%, lightgrey);
             padding: 2rem;
             border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.429);
         }
 
         .botao:hover,
@@ -42,37 +43,11 @@
 
 <body>
     <div class="botao" id="botao1">
-        <p>Botão 1</p>
-    </div>
-
-    <div class="botao" id="botao2">
-        <p>Botão 2</p>
-    </div>
-
-    <div class="botao" id="botao3">
-        <p>Botão 3</p>
+        <p>Inicie o desafio</p>
     </div>
 
     <script>
-        var bt1 = document.querySelector('#botao1')
-        var bt2 = document.querySelector('#botao2')
-        var bt3 = document.querySelector('#botao3')
-
-        bt1.addEventListener('click', clicouBt1)
-        bt2.addEventListener('click', clicouBt2)
-        bt3.addEventListener('click', clicouBt3)
-
-        function clicouBt1() {
-            alert('Você clicou no botão 1!') 
-        }
-
-        function clicouBt2() {
-            alert('Você clicou no botão 2!') 
-        }
-
-        function clicouBt3() {
-            alert('Você clicou no botão 3!') 
-        }
+        
     </script>
 
 </body>
