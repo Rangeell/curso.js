@@ -1,3 +1,4 @@
+// Variables
 var agora = new Date()
 var hora = agora.getHours()
 var minuto = agora.getMinutes()
@@ -6,7 +7,7 @@ var textoHora = document.querySelector('#horaAtual')
 var saudacao = document.querySelector('#saudacao')
 var body = document.body
 
-
+// Hours conditions
 if (hora == 0) {
     textoHora.innerHTML = `Agora é meia-noite (${hora}h:${minuto}min).`
     saudacao.innerHTML = 'Boa madrugada!'
