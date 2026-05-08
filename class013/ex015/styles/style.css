@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY ARE */
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    width: 100%;
+    min-height: 100dvh;
+
+    background-color: #3D83D5;
+}
+
+/* HEADER AREA */
+header {
+    text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.413);
+}
+
+/* SECTION AREA */
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+
+    width: 70vw;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+
+    background-color: white;
+    filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.522));
+}
+
+section > p {
+    text-align: center;
+}
+
+/* FORM AREA */
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* input number area */
+input[type='number'] {
+    width: 100px;
+
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #2d83e5;
+
+    color: #3D83D5;
+}
+
+input[type='number']:hover,
+input[type='number']:focus {
+    outline: none;
+}
+
+input[type='number']:focus-visible {
+    outline: 2px solid #0f5099;
+    outline-offset: 2px;
+}
+
+input[type='number']::placeholder {
+    color: #82b0e4;
+}
+
+/* FIELDSET AREA */
+fieldset {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #2d83e5;
+}
+
+/* input radio area */
+input[type='radio'] {
+    accent-color: #2d83e5;
+    border: 2px solid black;
+}
+
+input[type='radio']:focus-visible {
+    outline: 2px solid #2d83e5;
+}
+
+input[type='button'] {
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid #104558;
+    color: #87d9f7;
+    background-color: #477ab5;
+    transition: all .3s ease, outline-offset 0s;
+}
+
+input[type='button']:hover,
+input[type='button']:focus-visible {
+    color: #477ab5;
+    background-color: #87d9f7;
+    cursor: pointer;
+    outline: 2px solid #2d83e5;
+    outline-offset: 2px;
+}
+
+/* IMAGE AREA */
+img {
+    width: 70%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    outline: 3px solid rgb(26, 135, 186);
+    outline-offset: 2px;
+}
+
+.image {
+    text-align: center;
+}
+
+#youngBoy, #oldWoman, #oldMan {
+    display: none;
+}
+
+
+

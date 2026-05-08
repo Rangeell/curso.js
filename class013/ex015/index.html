@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de idade</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Verificador de idade</h1>
+    </header>
+
+    <section>
+        <form action="verificador.php" method="get">
+            <p>
+                <label for="iano">Ano de nascimento:</label>
+                <input type="number" name="ano" id="iano" required min="1900" max="2026" placeholder="Ex: 2002">
+            </p>
+
+            <fieldset>
+                <legend>Sexo</legend>
+                <p>
+                    <input type="radio" name="sexo" id="imas" value="M">
+                    <label for="imas">Masculino</label>
+                </p>
+                <p>
+                    <input type="radio" name="sexo" id="ifem">
+                    <label for="ifem">Feminino</label>
+                </p>
+            </fieldset>
+
+            <input type="button" value="Verificar">
+        </form>
+
+        <p>
+            Preencha para ver os resultados
+        </p>
+
+        <div class="image" id="youngGirl">
+            <img src="images/young-girl.jpg" alt="Imagem de uma garota jovem de braços cruzados e sorrindo">
+        </div>
+
+        <div class="image" id="youngBoy">
+            <img src="images/young-boy.jpg" alt="Imagem de uma garota jovem de braços cruzados e sorrindo">
+        </div>
+
+        <div class="image" id="oldWoman">
+            <img src="images/old-woman.jpg" alt="Imagem de uma garota jovem de braços cruzados e sorrindo">
+        </div>
+
+        <div class="image" id="oldMan">
+            <img src="images/old-man.jpg" alt="Imagem de um senhor de idade com chapéu e óculos, admirando o horizonte">
+        </div>
+    </section>
+
+    <script src="js/scritp.js"></script>
+</body>
+
+</html>
