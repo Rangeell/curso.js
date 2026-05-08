@@ -1,11 +1,11 @@
 // VARIABLES ARE
 
-// Time variables
+// VARIABLES - time
 var agora = new Date()
-var hora = 18
+var hora = agora.getHours()
 var minuto = agora.getMinutes()
 
-// Select variables
+// VARIABLES - Select
 var body = document.body
 var textoHora = document.querySelector('#horaAtual')
 var saudacao = document.querySelector('#saudacao')
@@ -13,12 +13,12 @@ var bordaImagemNigth = document.querySelectorAll('img')[2]
 var bordaImagemAfternoon = document.querySelectorAll('img')[1]
 console.log(bordaImagemAfternoon)
 
-// Select day variables
+// VARIABLES - Day Select
 var day = document.querySelector('#day')
 var afternoon = document.querySelector('#afternoon')
 var night = document.querySelector('#night')
 
-// Hours conditions
+// CONDITIONS - Hours
 if (hora == 0) {
     textoHora.innerHTML = `Agora é meia-noite (${hora}h:${minuto}min).`
     saudacao.innerHTML = 'Boa madrugada!'
