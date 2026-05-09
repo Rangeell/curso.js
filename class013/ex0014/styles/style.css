@@ -58,6 +58,13 @@ p {
     text-align: center;
 }
 
+footer p {
+    color: white;
+    font-weight: bold;
+}
+
+
+
 /* image area */
 
 img {

@@ -10,6 +10,7 @@ var textFem = document.querySelector('#ifem')
 var button = document.querySelector('#button')
 var res = document.querySelector('#res')
 
+var imgDiv = document.querySelector('.image')
 var img = document.querySelector('img')
 
 
@@ -25,11 +26,18 @@ function yearImageChange() {
     // CONDITIONS year results
     if (bornYear == 0) {
         res.innerHTML = 'Informe sua idade.'
+        alert('Você precisa informar sua idade. Verifique os dados tente novamente.')
+    } else if (bornYear > newYear || bornYear < 1900) {  
+        alert('Data inválida. Siga as instruções do texto.')
+        res.innerHTML = 'Informe uma data válida entre 1.900 e o ano atual.'
     } else if (!textFem.checked && !textMas.checked) {
         res.innerHTML = 'Informe seu sexo.'
+        alert('Você precisa informar seu sexo. Verifique os dados tente novamente.')
     } else {
         // CONDITIONS image change
+
         res.innerHTML = `Você tem ${idade} anos.`
+        imgDiv.style.display = 'block'
         if (idade >= 60 && textFem.checked) {
             img.src = 'images/old-woman.jpg'
             img.alt = 'Imagem de uma senhora de óculos escuros observando o horizonte em um belo dia '
