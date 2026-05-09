@@ -11,7 +11,6 @@ var textoHora = document.querySelector('#horaAtual')
 var saudacao = document.querySelector('#saudacao')
 var bordaImagemNigth = document.querySelectorAll('img')[2]
 var bordaImagemAfternoon = document.querySelectorAll('img')[1]
-console.log(bordaImagemAfternoon)
 
 // VARIABLES - Day Select
 var day = document.querySelector('#day')
