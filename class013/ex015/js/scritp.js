@@ -1,11 +1,9 @@
 // VARIABLES
 // VARIABLES - text
 var textAno = document.querySelector('#iano')
-console.log(textAno)
 
 // VARIABLES - checkbox 
 var textMas = document.querySelector('#imas')
-console.log(textMas)
 var textFem = document.querySelector('#ifem')
 
 // VARIABLES - button & result text
