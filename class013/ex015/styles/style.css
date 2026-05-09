@@ -113,8 +113,17 @@ input[type='button']:focus-visible {
     color: #477ab5;
     background-color: #87d9f7;
     cursor: pointer;
+    transform: scale(1.1);
+}
+
+input[type='button']:focus-visible {
     outline: 2px solid #2d83e5;
     outline-offset: 2px;
+}
+
+input[type='button']:active {
+    transform: scale(.95);
+    transition: .1s ease;
 }
 
 /* IMAGE AREA */
