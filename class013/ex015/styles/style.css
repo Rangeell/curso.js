@@ -133,7 +133,7 @@ img {
     object-fit: cover;
     border-radius: 50%;
     outline: 3px solid rgb(26, 135, 186);
-    outline-offset: 2px;
+    outline-offset: 3px;
 }
 
 .image {
