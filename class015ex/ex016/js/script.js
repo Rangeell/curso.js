@@ -9,21 +9,26 @@ for (inicio; inicio <= fim; inicio += passo) {
 }
 */
 
+// VARIABLES AREA
 
-var botao = document.querySelector('input[type="button"]')
-botao.addEventListener('click', Contar)
+// Buttom
+var button = document.querySelector('input[type="button"]')
+button.addEventListener('click', Contar)
 
+// Select text boxes
+var txtInicio = document.querySelector('#iinicio')
+var txtFim = document.querySelector('#ifim')
+var txtPasso = document.querySelector('#ipasso')
+
+// FUNCTION AREA
+
+// Contar
 function Contar() {
-    var txtInicio = document.querySelector('#iinicio')
     var inicio = txtInicio.value
-    
-    var txtFim = document.querySelector('#ifim')
     var fim = txtFim.value
-
-    var txtPasso = document.querySelector('#ipasso')
     var passo = txtPasso.value
 
-    
+    // Test
     // console.log(`${inicio} ${fim} ${passo}`)
 }
 
