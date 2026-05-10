@@ -22,22 +22,23 @@
         <form action="" method="get">
             <p>
                 <label for="iinicio">Início</label>
-                <input type="number" name="Inicio" id="iinicio">
+                <input type="number" name="Inicio" id="iinicio" required>
             </p>
             
             <p>
                 <label for="ifim">Fim:</label>
-                <input type="number" name="Fim" id="ifim">
+                <input type="number" name="Fim" id="ifim" required>
             </p>
 
             <p>
                 <label for="ipasso">Passo:</label>
-                <input type="number" name="Passo" id="ipasso">
+                <input type="number" name="Passo" id="ipasso" required>
             </p>
 
             <input type="button" value="Contar">
         </form>
 
+        <p id="contando"></p>
         <p id="contar"></p>
     </section>
 

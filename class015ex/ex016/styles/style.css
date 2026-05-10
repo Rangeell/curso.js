@@ -46,6 +46,10 @@ section>p {
     text-align: center;
 }
 
+section>#contar, #contando{
+    text-align: left;
+}
+
 /* FORM AREA */
 form {
     display: flex;
