@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hora do dia</title>
+    <title>Contador</title>
 
     <script src="https://kit.fontawesome.com/766cec8ad2.js" crossorigin="anonymous"></script>
 
@@ -15,11 +15,30 @@
 <body>
 
     <header>
-        
+        <h1>Vamos contar</h1>
     </header>
 
     <section>
-        
+        <form action="" method="get">
+            <p>
+                <label for="iinicio">Início</label>
+                <input type="number" name="Inicio" id="iinicio">
+            </p>
+            
+            <p>
+                <label for="ifim">Fim:</label>
+                <input type="number" name="Fim" id="ifim">
+            </p>
+
+            <p>
+                <label for="ipasso">Passo:</label>
+                <input type="number" name="Passo" id="ipasso">
+            </p>
+
+            <input type="button" value="Contar">
+        </form>
+
+        <p id="contar"></p>
     </section>
 
     <footer>
