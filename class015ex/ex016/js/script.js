@@ -1,36 +1,41 @@
 // VARIABLES AREA
 
 // Buttom
-var button = document.querySelector('input[type="button"]')
+let button = document.querySelector('input[type="button"]')
 button.addEventListener('click', Contar)
 
 // Select text boxes
-var txtInicio = document.querySelector('#iinicio')
-var txtFim = document.querySelector('#ifim')
-var txtPasso = document.querySelector('#ipasso')
+let txtInicio = document.querySelector('#iinicio')
+let txtFim = document.querySelector('#ifim')
+let txtPasso = document.querySelector('#ipasso')
 
 // Select p#contar
-var info = document.querySelector('#contar')
+let info = document.querySelector('#contar')
 info.innerText = "Preparando contagem..."
 
-var contando = document.querySelector('#contando')
+let contando = document.querySelector('#contando')
 
 // FUNCTION AREA
 
 // Contar
 function Contar() {
-    var inicio = Number(txtInicio.value)
-    var fim = Number(txtFim.value)
-    var passo = Number(txtPasso.value)
+    let inicio = Number(txtInicio.value)
+    let fim = Number(txtFim.value)
+    let passo = Number(txtPasso.value)
 
-    if (inicio == 0) {
-        info.innerHTML = 'Impossível contar sem um valor de início! Escolha um número.'
-    } else if (inicio > fim) {
-        alert('O número de início não pode ser maior que número de fim')
-        info.innerHTML = "O número de início não pode ser maior que o número de fim."
-    } else if (passo < 1) {
+    if (passo < 1) {
+        contando.innerHTML = ''
         alert('Passo inválido! Considerando passo 1')
-        passo++
+        passo = 1
+    } else if (inicio == 0) {
+        info.innerHTML = 'Impossível contar sem um valor de início! Escolha um número.'
+    } if (inicio > fim) {
+        contando.innerHTML = 'Contando..'
+        info.innerHTML = ''
+        for (inicio; inicio >= fim; inicio -= passo) {
+            info.innerHTML += `${inicio} 👉`
+        }
+        info.innerHTML += '🏁'
     } else {
         info.innerHTML = ``
         contando.innerHTML = 'Contando..'
