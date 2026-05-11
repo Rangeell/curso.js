@@ -4,6 +4,8 @@
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    user-select: none;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -25,6 +27,7 @@ body {
 /* HEADER AREA */
 header {
     text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.413);
+    color: white;
 }
 
 /* SECTION AREA */
@@ -40,6 +43,7 @@ section {
 
     background-color: white;
     filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.522));
+    color: #477ab5;
 }
 
 section>p {
@@ -118,9 +122,9 @@ input[type='button']:active {
 
 textarea {
     padding: 10px;
-    border-radius: 8px;
     height: 11rem;
-    border: 1.5px solid #477ab5;
+    border-radius: 8px;
+    border: 1.5px solid #82b0e4;
     color: #3D83D5;
     resize: none;
     transition: all .3s ease;
@@ -131,12 +135,15 @@ textarea {
 
     &:hover,
     :focus {
+        background-color: #a8dbeda0;
         cursor: pointer;
-        outline: none;
     }
 
     &:focus-visible {
         outline: none;
-        background-color: #a8dbeda0;
     }
+}
+
+footer {
+    color: white;
 }

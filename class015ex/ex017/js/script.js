@@ -1,24 +1,23 @@
-var txtNumber = document.querySelector('#inumber')
-var txtDiv = document.querySelector('#itabuada')
+let txtNumber = document.querySelector('#inumber')
+let txtTabuada = document.querySelector('#itabuada')
 
-var button = document.querySelector('input[type="button')
+let button = document.querySelector('input[type="button')
 
 
 
 button.addEventListener('click', gerarTabuada)
 
 function gerarTabuada() {
-    txtDiv.innerHTML = ''
-
-    var number = Number(txtNumber.value)
-    var mult = 1
-
-    if (number == '') {
+    txtTabuada.innerHTML = ''
+    let mult = 1
+    
+    if (txtNumber.value.length == '') {
         alert('Você precisa digitar um número para gerarmos a tabuada!')
     } else {
+        let number = Number(txtNumber.value)
         for (mult; mult <= 10; mult++) {
-            var res = number * mult
-            txtDiv.innerHTML += `${number} x ${mult} = ${res}\n`
+            let res = number * mult
+            txtTabuada.innerHTML += `${number} x ${mult} = ${res}\n`
         }
     }
 
