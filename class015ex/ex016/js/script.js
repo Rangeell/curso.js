@@ -1,15 +1,3 @@
-/*
-var inicio = 20
-var fim = 10
-var passo = 2
-
-console.log(`${inicio}`)
-for (inicio; inicio <= fim; inicio += passo) {
-    var soma = inicio + passo
-    console.log(`👉${soma}`)
-}
-*/
-
 // VARIABLES AREA
 
 // Buttom
@@ -44,14 +32,11 @@ function Contar() {
         alert('Passo inválido! Considerando passo 1')
         passo++
     } else {
+        info.innerHTML = ``
+        contando.innerHTML = 'Contando..'
         for (inicio; inicio <= fim; inicio += passo) {
-            contando.innerHTML = 'Contando..'
-            info.innerHTML = `${inicio} ${soma}`
-            
-            console.log(`${soma}`)
-            console.log(`${inicio} ${fim} ${passo}`)
+            info.innerHTML += `${inicio} 👉`
         }
+        info.innerHTML += '🏁'
     }
 }
-
-// Test
