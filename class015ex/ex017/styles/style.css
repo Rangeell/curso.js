@@ -14,7 +14,7 @@ body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 30px;
 
     width: 100%;
     min-height: 100dvh;
@@ -46,3 +46,97 @@ section>p {
     text-align: center;
 }
 
+section>#contar,
+#contando {
+    text-align: left;
+}
+
+/* FORM AREA */
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+/* input number area */
+input[type='number'] {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid #2d83e5;
+
+    color: #3D83D5;
+    transition: all .3s ease;
+}
+
+input[type='number']:hover,
+input[type='number']:focus {
+    outline: none;
+}
+
+input[type='number']:focus-visible {
+    /* outline: 2px solid #0f5099; */
+    /* outline-offset: 2px;  */
+    background-color: #a8dbeda0;
+}
+
+input[type='number']::placeholder {
+    color: #82b0e4;
+}
+
+input[type='button'] {
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #104558;
+    margin-left: 8px;
+    font-weight: bold;
+    color: #87d9f7;
+    background-color: #477ab5;
+
+    transition: all .3s ease, outline-offset 0s;
+}
+
+input[type='button']:hover,
+input[type='button']:focus-visible {
+    color: #477ab5;
+    background-color: #87d9f7;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+input[type='button']:focus-visible {
+    outline: 2px solid #2d83e5;
+    outline-offset: 2px;
+}
+
+input[type='button']:active {
+    transform: scale(.95);
+    transition: .1s ease;
+}
+
+textarea {
+    padding: 10px;
+    border-radius: 8px;
+    height: 11rem;
+    border: 1.5px solid #477ab5;
+    color: #3D83D5;
+    resize: none;
+    transition: all .3s ease;
+
+    &::placeholder {
+        color: #3D83D5;
+    }
+
+    &:hover,
+    :focus {
+        cursor: pointer;
+        outline: none;
+    }
+
+    &:focus-visible {
+        outline: none;
+        background-color: #a8dbeda0;
+    }
+}
