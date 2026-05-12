@@ -12,32 +12,36 @@ document.querySelector('#buttonClear'),
 document.querySelector('#inumber'),
 document.querySelector('#ianalisador')]
 
-
 console.log(component)
 
+
+
+
+// FUNCTION add number list
 component[0].addEventListener('click', add)
-component[2].addEventListener('click', clear)
-
-
 let numbers = []
 function add() {
     console.log(numbers)
+    numberAdd = Number(component[3].value)
     // 1 Validation
-    if (component[3].value.length == '') {
-        return alert('Você precisa adionar um número')
+    if (component[3].value.length === 0) {
+        return alert('Você precisa adionar um número para ser analisado!')
     } else if (component[3].value > 100) {
-        return alert('valor maior que 100')
+        return alert('O número deve ser menor que 100!')
+    } else if (numbers.indexOf(numberAdd) !== -1) {
+        return alert(`O número ${numberAdd} já foi adicionado à lista! Escolha outro.`)
     } else {
-        numberAdd = Number(component[3].value)
         numbers.push(numberAdd)
-    } 
-
-    component[4].innerHTML += `Valor ${component[3].value} adicionado.\n`
+        component[4].value += `Valor ${component[3].value} adicionado.\n`
+    }
+    
     
 }
 
+// FUNCTION clear
+component[2].addEventListener('click', clear)
 function clear() {
-    component[4].innerHTML = ''
+    component[4].value = ''
     numbers.length = 0
 }
 
