@@ -41,6 +41,10 @@ function add() {
 component[1].addEventListener('click', analise)
 function analise() {
 
+    component[6].innerHTML = ''
+    component[7].innerHTML = ''
+    component[8].innerHTML = ''
+
     if (component[4].value === '') {
         alert('Não há números para analisar')
     } else {
@@ -92,6 +96,10 @@ function clear() {
     component[6].remove()
     component[7].remove()
     component[8].remove()
+
+    component[6].innerHTML = ''
+    component[7].innerHTML = ''
+    component[8].innerHTML = ''
 }
 
 
