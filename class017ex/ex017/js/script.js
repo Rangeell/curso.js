@@ -1,10 +1,4 @@
-/* 
-let buttonAdd = document.querySelector('#buttonAdd')
-let buttonFished = document.querySelector('#buttonFished')
-let analisador = document.querySelector('#ianalisador')
-
-*/
-
+// GLOBAL VARIABLES
 let component =
     [document.querySelector('#buttonAdd'),
     document.querySelector('#buttonAnalise'),
@@ -15,6 +9,8 @@ let component =
     ]
 
 let dynamicParagraphs = [
+    document.createElement('p'),
+    document.createElement('p'),
     document.createElement('p'),
     document.createElement('p'),
     document.createElement('p')
@@ -61,7 +57,6 @@ function analise() {
             textCadastro = 'cadastrado'
         }
 
-
         // TOTAL numbers
         component[5].appendChild(dynamicParagraphs[0])
 
@@ -90,6 +85,11 @@ function analise() {
         component[5].appendChild(dynamicParagraphs[2])
 
         dynamicParagraphs[2].innerHTML += `O menor número informado foi ${lower}.`
+
+        let soma = 0
+        for (let c = 0; c < numbers.length; c++) {
+            
+        }
     }
 }
 
