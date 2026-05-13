@@ -11,11 +11,14 @@ let component =
     document.querySelector('#buttonClear'),
     document.querySelector('#inumber'),
     document.querySelector('#ianalisador'),
-    document.getElementsByTagName('section')[0],
+    document.querySelector('#result')
+    ]
+
+let dynamicParagraphs = [
     document.createElement('p'),
     document.createElement('p'),
     document.createElement('p')
-    ]
+]
 console.log(component)
 
 // FUNCTION add number list
@@ -24,7 +27,8 @@ let numbers = []
 function add() {
     console.log(numbers)
     let numberAdd = Number(component[3].value)
-    // 1 Validation
+    
+    // Validation
     if (component[3].value.length === 0) {
         return alert('Você precisa adionar um número para ser analisado!')
     } else if (component[3].value > 100) {
@@ -41,10 +45,11 @@ function add() {
 component[1].addEventListener('click', analise)
 function analise() {
 
-    component[6].innerHTML = ''
-    component[7].innerHTML = ''
-    component[8].innerHTML = ''
+    dynamicParagraphs[0].innerHTML = ''
+    dynamicParagraphs[1].innerHTML = ''
+    dynamicParagraphs[2].innerHTML = ''
 
+    // Validation
     if (component[4].value === '') {
         alert('Não há números para analisar')
     } else {
@@ -57,11 +62,12 @@ function analise() {
         }
 
 
-        component[5].appendChild(component[6])
+        // TOTAL numbers
+        component[5].appendChild(dynamicParagraphs[0])
 
-        component[6].innerHTML = `Ao todo temos ${numbers.length} ${textNumber} ${textCadastro}.`
+        dynamicParagraphs[0].innerHTML = `Ao todo temos ${numbers.length} ${textNumber} ${textCadastro}.`
 
-        // higher number
+        // HIGHER number
         let higher = numbers[0]
         for (let higherStart = 0; higherStart < numbers.length; higherStart++) {
             if (numbers[higherStart] > higher) {
@@ -69,11 +75,11 @@ function analise() {
             }
         }
 
-        component[5].appendChild(component[7])
+        component[5].appendChild(dynamicParagraphs[1])
 
-        component[7].innerHTML += `O maior número informado foi ${higher}.`
+        dynamicParagraphs[1].innerHTML += `O maior número informado foi ${higher}.`
 
-        // lower number
+        // LOWER number
         let lower = numbers[0]
         for (let lowerStart = 0; lowerStart < numbers.length; lowerStart++) {
             if (numbers[lowerStart] < lower) {
@@ -81,9 +87,9 @@ function analise() {
             }
         }
 
-        component[5].appendChild(component[8])
+        component[5].appendChild(dynamicParagraphs[2])
 
-        component[8].innerHTML += `O menor número informado foi ${lower}.`
+        dynamicParagraphs[2].innerHTML += `O menor número informado foi ${lower}.`
     }
 }
 
@@ -93,13 +99,5 @@ function clear() {
     numbers.length = 0
     component[3].value = ''
     component[4].value = ''
-    component[6].remove()
-    component[7].remove()
-    component[8].remove()
-
-    component[6].innerHTML = ''
-    component[7].innerHTML = ''
-    component[8].innerHTML = ''
+    component[5].innerHTML = ''
 }
-
-
