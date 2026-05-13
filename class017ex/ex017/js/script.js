@@ -58,7 +58,7 @@ function analise() {
             
             // lower number
             let lower = numbers[0]
-            for (let lowerStart = 0; lowerStart > numbers.length; lowerStart++) {
+            for (let lowerStart = 0; lowerStart < numbers.length; lowerStart++) {
                 if (numbers[lowerStart] < lower) {
                     lower = numbers[lowerStart]
                 }
