@@ -11,8 +11,11 @@ let component =
     document.querySelector('#buttonClear'),
     document.querySelector('#inumber'),
     document.querySelector('#ianalisador'),
-    document.getElementsByTagName('p')[2]]
-
+    document.getElementsByTagName('section')[0],
+    document.createElement('p'),
+    document.createElement('p'),
+    document.createElement('p')
+    ]
 console.log(component)
 
 // FUNCTION add number list
@@ -41,38 +44,54 @@ function analise() {
     if (component[4].value === '') {
         alert('Não há números para analisar')
     } else {
-        let textoNumero = 'números'
+        let textNumber = 'números'
+        let textCadastro = 'cadastrados'
+
         if (numbers.length == 1) {
-            textoNumero = 'número'
+            textNumber = 'número'
+            textCadastro = 'cadastrado'
         }
-            component[5].innerHTML = `Ao todo temos ${numbers.length} ${textoNumero} cadastrados.<br>`
 
-            // higher number
-            let higher = numbers[0]
-            for (let higherStart = 0; higherStart < numbers.length; higherStart++) {
-                if (numbers[higherStart] > higher) {
-                    higher = numbers[higherStart]
-                }
+
+        component[5].appendChild(component[6])
+
+        component[6].innerHTML = `Ao todo temos ${numbers.length} ${textNumber} ${textCadastro}.`
+
+        // higher number
+        let higher = numbers[0]
+        for (let higherStart = 0; higherStart < numbers.length; higherStart++) {
+            if (numbers[higherStart] > higher) {
+                higher = numbers[higherStart]
             }
-            component[5].innerHTML += `O maior número informado foi ${higher}. <br>`
-            
-            // lower number
-            let lower = numbers[0]
-            for (let lowerStart = 0; lowerStart < numbers.length; lowerStart++) {
-                if (numbers[lowerStart] < lower) {
-                    lower = numbers[lowerStart]
-                }
-            }
-            component[5].innerHTML += `O menor número informado foi ${lower}. <br>`
         }
-    }
 
-    // FUNCTION clear
-    component[2].addEventListener('click', clear)
-    function clear() {
-        component[5].innerHTML = ''
-        component[4].value = ''
-        numbers.length = 0
+        component[5].appendChild(component[7])
+
+        component[7].innerHTML += `O maior número informado foi ${higher}.`
+
+        // lower number
+        let lower = numbers[0]
+        for (let lowerStart = 0; lowerStart < numbers.length; lowerStart++) {
+            if (numbers[lowerStart] < lower) {
+                lower = numbers[lowerStart]
+            }
+        }
+
+        component[5].appendChild(component[8])
+
+        component[8].innerHTML += `O menor número informado foi ${lower}.`
     }
+}
+
+// FUNCTION clear
+component[2].addEventListener('click', clear)
+function clear() {
+    numbers.length = 0
+    component[3].value = ''
+    component[4].value = ''
+    component[6].remove()
+    component[7].remove()
+    component[8].remove()
+}
 
 
