@@ -15,13 +15,11 @@ let dynamicParagraphs = [
     document.createElement('p'),
     document.createElement('p')
 ]
-console.log(component)
 
 // FUNCTION add number list
 component[0].addEventListener('click', add)
 let numbers = []
 function add() {
-    console.log(numbers)
     let numberAdd = Number(component[3].value)
 
     // Validation
