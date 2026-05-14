@@ -20,7 +20,7 @@ let dynamicParagraphs = [
 let numbers = []
 
 function isNumero(n) {
-    return Number(n) < 100
+    return Number(n) <= 100
 }
 
 function inLista(n, l) {
@@ -34,7 +34,6 @@ component[3].addEventListener('keydown', function(enter) {
         analise()
     }
 })
-    
 
 component[0].addEventListener('click', add)
 function add() {
@@ -59,14 +58,8 @@ function add() {
 component[1].addEventListener('click', analise)
 function analise() {
 
-    dynamicParagraphs[0].innerHTML = ''
-    dynamicParagraphs[1].innerHTML = ''
-    dynamicParagraphs[2].innerHTML = ''
-    dynamicParagraphs[3].innerHTML = ''
-    dynamicParagraphs[4].innerHTML = ''
-
     // Validation
-    if (component[4].value === '') {
+    if (numbers.length === 0) {
         alert('Não há números para analisar')
     } else {
         let textNumber = 'números'
@@ -82,43 +75,29 @@ function analise() {
 
         dynamicParagraphs[0].innerHTML = `Ao todo temos ${numbers.length} ${textNumber} ${textCadastro}.`
 
-        // HIGHER number
+        // HIGHER/LOWER number - SUM - MEDIA
         let higher = numbers[0]
-        for (let i = 0; i < numbers.length; i++) {
+        let lower = numbers[0]
+        let sum = 0
+        for (let i in numbers) {
             if (numbers[i] > higher) {
                 higher = numbers[i]
             }
-        }
-
-        component[5].appendChild(dynamicParagraphs[1])
-
-        dynamicParagraphs[1].innerHTML = `O maior número informado foi ${higher}.`
-
-        // LOWER number
-        let lower = numbers[0]
-        for (let i = 0; i < numbers.length; i++) {
             if (numbers[i] < lower) {
                 lower = numbers[i]
             }
+            sum += numbers[i]
         }
+        let media = sum / numbers.length
 
+        component[5].appendChild(dynamicParagraphs[1])
         component[5].appendChild(dynamicParagraphs[2])
 
+        dynamicParagraphs[1].innerHTML = `O maior número informado foi ${higher}.`
         dynamicParagraphs[2].innerHTML = `O menor número informado foi ${lower}.`
 
-        // SUM
-        let sum = 0
-        for (let i = 0; i < numbers.length; i++) {
-            sum += numbers[i]
-
-        }
-
         component[5].appendChild(dynamicParagraphs[3])
-
         dynamicParagraphs[3].innerHTML = `Somando todos os valores, temos ${sum}`
-
-        // MEDIA
-        let media = sum / numbers.length
 
         let textValue = 'dos valores'
         if (numbers.length == 1) {
@@ -126,7 +105,6 @@ function analise() {
         }
 
         component[5].appendChild(dynamicParagraphs[4])
-
         dynamicParagraphs[4].innerHTML = `A média ${textValue} ${textCadastro} é ${media.toFixed(2).replace('.', ',')}`
     }
 }

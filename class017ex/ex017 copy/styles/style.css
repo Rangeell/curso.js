@@ -31,6 +31,20 @@ header {
     font-variant: small-caps;
 }
 
+header h1::after {
+    content: '';
+    display: block;
+    background-color: #87D9F7;
+    border-radius: 5px;
+    width: 0px;
+    height: 5px;
+    transition: width .5s ease-out;
+}
+
+header:hover h1::after {
+    width: 383px;
+}
+
 /* SECTION AREA */
 section {
     display: flex;
