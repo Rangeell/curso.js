@@ -64,9 +64,9 @@ function analise() {
 
         // HIGHER number
         let higher = numbers[0]
-        for (let higherStart = 0; higherStart < numbers.length; higherStart++) {
-            if (numbers[higherStart] > higher) {
-                higher = numbers[higherStart]
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > higher) {
+                higher = numbers[i]
             }
         }
 
@@ -76,9 +76,9 @@ function analise() {
 
         // LOWER number
         let lower = numbers[0]
-        for (let lowerStart = 0; lowerStart < numbers.length; lowerStart++) {
-            if (numbers[lowerStart] < lower) {
-                lower = numbers[lowerStart]
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] < lower) {
+                lower = numbers[i]
             }
         }
 
@@ -86,10 +86,16 @@ function analise() {
 
         dynamicParagraphs[2].innerHTML += `O menor número informado foi ${lower}.`
 
-        let soma = 0
-        for (let c = 0; c < numbers.length; c++) {
-            
+        // SUM
+        let sum = 0
+        for (let i = 0; i < numbers.length; i++) {
+            sum += numbers[i]
+
         }
+
+        component[5].appendChild(dynamicParagraphs[2])
+
+        dynamicParagraphs[2].innerHTML = `Somando todos os valores, temos ${sum}`
     }
 }
 
