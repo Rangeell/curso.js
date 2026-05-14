@@ -23,11 +23,11 @@ let numbers = []
 function add() {
     console.log(numbers)
     let numberAdd = Number(component[3].value)
-    
+
     // Validation
     if (component[3].value.length === 0) {
         return alert('Você precisa adionar um número para ser analisado!')
-    } else if (component[3].value > 100) {
+    } else if (numberAdd > 100) {
         return alert('O número deve ser menor que 100!')
     } else if (numbers.indexOf(numberAdd) !== -1) {
         return alert(`O número ${numberAdd} já foi adicionado à lista! Escolha outro.`)
@@ -44,6 +44,8 @@ function analise() {
     dynamicParagraphs[0].innerHTML = ''
     dynamicParagraphs[1].innerHTML = ''
     dynamicParagraphs[2].innerHTML = ''
+    dynamicParagraphs[3].innerHTML = ''
+    dynamicParagraphs[4].innerHTML = ''
 
     // Validation
     if (component[4].value === '') {
@@ -72,7 +74,7 @@ function analise() {
 
         component[5].appendChild(dynamicParagraphs[1])
 
-        dynamicParagraphs[1].innerHTML += `O maior número informado foi ${higher}.`
+        dynamicParagraphs[1].innerHTML = `O maior número informado foi ${higher}.`
 
         // LOWER number
         let lower = numbers[0]
@@ -84,7 +86,7 @@ function analise() {
 
         component[5].appendChild(dynamicParagraphs[2])
 
-        dynamicParagraphs[2].innerHTML += `O menor número informado foi ${lower}.`
+        dynamicParagraphs[2].innerHTML = `O menor número informado foi ${lower}.`
 
         // SUM
         let sum = 0
@@ -93,9 +95,21 @@ function analise() {
 
         }
 
-        component[5].appendChild(dynamicParagraphs[2])
+        component[5].appendChild(dynamicParagraphs[3])
 
-        dynamicParagraphs[2].innerHTML = `Somando todos os valores, temos ${sum}`
+        dynamicParagraphs[3].innerHTML = `Somando todos os valores, temos ${sum}`
+
+        // MEDIA
+        let media = sum / numbers.length
+        
+        let textValue = 'dos valores'
+        if (numbers.length == 1) {
+            textValue = 'do valor'
+        }
+
+        component[5].appendChild(dynamicParagraphs[4])
+
+        dynamicParagraphs[4].innerHTML = `A média ${textValue} ${textCadastro} é ${media.toFixed(2).replace('.', ',')}`
     }
 }
 
