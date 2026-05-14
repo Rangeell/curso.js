@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Challenge</title>
+
+    <script src="https://kit.fontawesome.com/766cec8ad2.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Analisador de números</h1>
+    </header>
+
+    <section>
+        <form action="" method="get">
+            <p>
+                <label for="inumber">Número entre 1 e 100</label>
+                <input type="number" name="number" id="inumber">
+                <input type="button" value="Adicionar" id="buttonAdd">
+            </p>
+            
+            <fieldset>
+                <legend>Analisador</legend>
+                <textarea name="analisador" id="ianalisador" placeholder="Digite um número acima" readonly></textarea>
+            </fieldset>
+            <p>
+                <input type="button" value="Analisar" id="buttonAnalise">
+                
+                <input type="button" value="Limpar" id="buttonClear">
+            </p>
+
+            <div id="result">
+
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; Curso em vídeo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

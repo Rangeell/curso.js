@@ -17,6 +17,16 @@ let dynamicParagraphs = [
 ]
 
 // FUNCTION add number list
+let numbers = []
+
+function isNumero(n) {
+    return Number(n) < 100
+}
+
+function inLista(n, l) {
+    return l.indexOf(Number(n)) != -1
+}
+
 component[3].addEventListener('keydown', function(enter) {
     if (enter.key === 'Enter') {
         enter.preventDefault()
@@ -24,18 +34,18 @@ component[3].addEventListener('keydown', function(enter) {
         analise()
     }
 })
+    
 
 component[0].addEventListener('click', add)
-let numbers = []
 function add() {
     let numberAdd = Number(component[3].value)
 
     // Validation
     if (component[3].value.length === 0) {
         alert('Você precisa adionar um número para ser analisado!')
-    } else if (numberAdd > 100) {
+    } else if (!isNumero(component[3].value)) {
         alert('O número deve ser menor que 100!')
-    } else if (numbers.indexOf(numberAdd) !== -1) {
+    } else if (inLista(component[3].value, numbers)) {
         alert(`O número ${numberAdd} já foi adicionado à lista! Escolha outro.`)
     } else {
         numbers.push(numberAdd)
@@ -109,7 +119,7 @@ function analise() {
 
         // MEDIA
         let media = sum / numbers.length
-        
+
         let textValue = 'dos valores'
         if (numbers.length == 1) {
             textValue = 'do valor'
