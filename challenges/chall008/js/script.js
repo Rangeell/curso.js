@@ -12,8 +12,8 @@ function finalPrice(originalPrice = 0) {
 }
 
 button.addEventListener('click', function () {
-    product = prompt('Qual produto você está comprando?')
-    originalPrice = Number(prompt(`Qual é o preço de ${product}?`))
+    let = product = prompt('Qual produto você está comprando?')
+    let = originalPrice = Number(prompt(`Qual é o preço de ${product}?`))
 
     let discount = originalPrice * 10 / 100
 
