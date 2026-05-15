@@ -13,7 +13,6 @@
 }
 
 
-
 html, body {
     width: 100%;
     height: 100dvh;
@@ -23,12 +22,14 @@ html, body {
 body {
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 10px;
+
+    padding-inline: 10px;
 }
 
-div {
+#normal {
     background-color: lightgrey;
     padding: 10px;
     border-radius: 5px;
@@ -36,14 +37,17 @@ div {
     transition: all .2s ease;
 }
 
-div:hover {
+#normal:hover {
     background-color: rgba(128, 128, 128, 0.526);
     border-color: rgb(166, 161, 161);
     cursor: pointer;
 }
 
-div:active {
+#normal:active {
     transform: scale(.95);
     transition: .1s;
 }
 
+#res p {
+    margin-top: 10px;
+}
