@@ -17,7 +17,6 @@ button.addEventListener('click', converter)
 function converter() {
     let number = Number(prompt('Digite uma ditância em metros (m)'))
 
-
     let txtMetro = (number === 1 ? 'metro' : 'metros')
 
     divRes.appendChild(dynamicParagraphs.h2)
@@ -46,7 +45,7 @@ function converter() {
 
     dynamicParagraphs.p2.innerHTML = `${medidas.hm.toString().replace('.', ',')} hectômetros (hm).`
 
-    dynamicParagraphs.p3.innerHTML = `${medidas.dam.toString().replace('.', ',')} decâmectros (dam).`
+    dynamicParagraphs.p3.innerHTML = `${medidas.dam.toString().replace('.', ',')} decâmetros (dam).`
 
     dynamicParagraphs.p4.innerHTML = `${medidas.dm.toString().replace('.', ',')} decímetros(dm).`
 
