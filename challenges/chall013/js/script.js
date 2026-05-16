@@ -33,6 +33,5 @@ button.addEventListener('click', function () {
     } else {
         tableData.situationLocal.textContent = 'Aprovado'
         tableData.situationLocal.className = 'approved'
-        
     }
 })
