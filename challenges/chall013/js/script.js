@@ -22,7 +22,7 @@ button.addEventListener('click', function () {
     tableData.nameLocal.textContent = `${name}`
     tableData.score1Local.textContent = `${formatScore(score1)}`
     tableData.score2Local.textContent = `${formatScore(score2)}`
-    tableData.averageLocal.textContent = `${formatScore(average)}`
+    tableData.averageLocal.textContent = `${formatScor(average)}`
 
     if (average <= 3) {
         tableData.situationLocal.textContent = 'Reprovado'
