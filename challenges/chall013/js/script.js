@@ -1,7 +1,5 @@
 let button = document.querySelector('#button')
-
 let tds = document.querySelectorAll('tbody td')
-
 let tableData = {
     nameLocal: tds[0],
     score1Local: tds[1],
