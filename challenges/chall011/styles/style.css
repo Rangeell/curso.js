@@ -55,4 +55,12 @@ body {
 
 #res p {
     margin-top: 10px;
+
+}
+
+mark {
+    background-color: rgba(34, 219, 34, 0.504);
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid green;
 }

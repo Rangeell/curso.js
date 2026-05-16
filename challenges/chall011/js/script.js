@@ -3,42 +3,27 @@ let res = document.querySelector('#res')
 
 let dynamicElements = {
     h2: document.createElement('h2'),
-    equaçãoAtual: document.createElement('p'),
-    calculoRealizado: document.createElement('p'),
-    valorDeDelta: document.createElement('p')
+    p1: document.createElement('p')
 }
 
 res.append(
     dynamicElements.h2,
-    dynamicElements.equaçãoAtual,
-    dynamicElements.calculoRealizado,
-    dynamicElements.valorDeDelta
+    dynamicElements.p1
 )
 
 button.addEventListener('click', function () {
-    let a = Number(prompt('Qual é o valor de a'))
-    let b = Number(prompt('Qual é o valor de b'))
-    let c = Number(prompt('Qual é o valor de c'))
-
-    let delta = b ** 2 - 4 * a * c
+    year = prompt('Qual ano você quer verificar?')
 
     res.style.display = 'block'
-    dynamicElements.h2.innerHTML = 'Resolvendo Bhaskara!'
+    dynamicElements.h2.innerHTML = `Analisando o ano de ${year}...`
 
-    dynamicElements.equaçãoAtual.innerHTML = `A equação atual é ${a}x² + ${b}x + ${c} = 0.`
-
-    dynamicElements.calculoRealizado.innerHTML = `O cálculo realizado será: Δ = ${b}² - 4 · ${a} · ${c}`
-
-    if (delta < 0) {
-        dynamicElements.valorDeDelta.innerHTML = 'Não existem raízes reais (Δ < 0).'
+    if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        dynamicElements.p1.innerHTML = `O ano de ${year} <mark>É BISSEXTO ✅</mark>`
     } else {
-        let results = [
-            (-b + Math.sqrt(delta)) / (2 * a),
-            (-b - Math.sqrt(delta)) / (2 * a)
-        ]
-        dynamicElements.valorDeDelta.innerHTML = `x1 = ${results[0]}.<br> 
-        x2 = ${results[1]}.<br>
-        Δ = ${delta}.`
-    }
+        dynamicElements.p1.innerHTML = `O ano de ${year} <mark>NÃO É BISSEXTO ❌</mark>`
+        let mark = document.querySelector('mark')
 
+        mark.style.backgroundColor = 'rgba(255, 0, 0, 0.403)'
+        mark.style.borderColor = 'red'
+    }
 })
